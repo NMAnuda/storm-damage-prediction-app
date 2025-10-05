@@ -54,21 +54,6 @@ else:
 # Visualizations
 st.header("📈 Visualizations")
 
-# Damage Property Distribution
-if 'DAMAGE_PROPERTY' in df.columns:
-    st.subheader("Distribution of Property Damage")
-    fig, ax = plt.subplots(figsize=(12, 6))
-    sns.histplot(data=df, x='DAMAGE_PROPERTY', bins=50, kde=True, color='#4f46e5', alpha=0.7, ax=ax)
-    ax.set_title("Property Damage Distribution", fontsize=18, fontweight='bold', pad=20)
-    ax.set_xlabel("Damage Amount (USD)", fontsize=14)
-    ax.set_ylabel("Frequency", fontsize=14)
-    ax.grid(True, alpha=0.3)
-    for spine in ax.spines.values():
-        spine.set_visible(False)
-    ax.spines['bottom'].set_visible(True)
-    ax.spines['bottom'].set_color('gray')
-    ax.spines['bottom'].set_linewidth(0.5)
-    st.pyplot(fig)
 
 # Event Type Count - Limit to top 10 for better visualization
 if 'EVENT_TYPE' in df.columns:
@@ -109,5 +94,5 @@ else:
     st.warning("Insufficient numeric columns for correlation heatmap.")
 
 # Conclusion
-st.header("💡 Insights")
+st.header("Insights")
 st.write("The statistics and visualizations above provide valuable insights into the storm damage dataset, highlighting key patterns in event types, damage distributions, and feature relationships to better understand factors affecting storm damage predictions.")
