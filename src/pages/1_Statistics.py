@@ -22,7 +22,7 @@ st.title("🌪️ Storm Damage Prediction Statistics")
 # Load the dataset
 @st.cache_data
 def load_data():
-    df = pd.read_csv('StormEvents_cleaned.csv')
+    df = pd.read_csv('https://raw.githubusercontent.com/NMAnuda/storm-damage-prediction-app/refs/heads/main/src/StormEvents_cleaned.csv')
     # Convert DAMAGE_PROPERTY to numeric (assuming format like '10.00K' meaning 10,000 USD)
     if 'DAMAGE_PROPERTY' in df.columns:
         df['DAMAGE_PROPERTY'] = pd.to_numeric(
